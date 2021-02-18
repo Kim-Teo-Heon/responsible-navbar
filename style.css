@@ -1,0 +1,160 @@
+/* Global */
+:root {
+  /* Color */
+  --color-beige: #d7d3c6;
+  --color-black: #000;
+
+  /* Font-size */
+  --font-size-regular: 18px;
+  --font-size-large: 28px;
+
+  /* Size */
+  --size-border-radius: 4px;
+
+  /* Opacity */
+  --opacity: 0.7;
+}
+
+/* Web font Install */
+@import url(db.onlinewebfonts.com/c/3f62fa4ea3be658127023245e0317a74?family=FuturaRoundW01-Demi);
+/* 속도 : @Font-size < @import */
+
+/* Universal tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "FuturaRoundW01-Demi";
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-regular);
+}
+
+/* Navbar */
+#navbar {
+  background-color: var(--color-beige);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  position: relative;
+}
+
+.navbar__logo {
+  font-size: var(--font-size-large);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar__menu__item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  color: var(--color-black);
+  font-size: var(--font-size-regular);
+  cursor: pointer;
+}
+
+.navbar__menu__icons {
+  margin: 0 16px;
+  font-size: var(--font-size-large);
+  cursor: pointer;
+}
+
+.navbar__toggle-btn {
+  display: none;
+  font-size: var(--font-size-large);
+}
+
+.navbar__logo:hover,
+.navbar__toggle-btn:hover,
+.navbar__menu__item:hover,
+.navbar__menu__icons:hover {
+  opacity: var(--opacity);
+}
+
+/* Method 1 */
+/* @media (max-width: 750px) {
+  .navbar__menu {
+    background-color: var(--color-beige);
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar__toggle-btn {
+    display: inline-block;
+  }
+
+  .navbar__menu.active,
+  .navbar__menu__icons.active {
+    display: flex;
+  }
+} */
+
+/* Method 2 */
+@media (max-width: 750px) {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    display: none;
+  }
+
+  .navbar__menu__icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    display: none;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+    position: absolute;
+    right: 32px;
+  }
+
+  .navbar__menu.active,
+  .navbar__menu__icons.active {
+    display: flex;
+  }
+}
+
+/* .active {
+  display: flex;
+} */
